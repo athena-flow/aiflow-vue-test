@@ -29,7 +29,8 @@ export default {
     return {
       modalVisible:false,
       lang: "zh",
-      demoData: {
+      demoData: {},
+      TestData: {
         nodes: [{ id: 'startNode1', x: 50, y: 200, label: '', clazz: 'start', },
           { id: 'startNode2', x: 50, y: 320, label: '', clazz: 'timerStart', },
           { id: 'taskNode1', x: 200, y: 200, label: '主任审批', clazz: 'userTask',  },
