@@ -74,11 +74,11 @@
     data() {
       return {
         activeNames: [],
-        userTaskData: "{clazz:'userTask',size:'80*44',label:'"+this.i18n['userTask']+"'}",
-        scriptTaskData: "{clazz:'scriptTask',size:'80*44',label:'"+this.i18n['scriptTask']+"'}",
-        javaTaskData: "{clazz:'javaTask',size:'80*44',label:'"+this.i18n['javaTask']+"'}",
-        mailTaskData: "{clazz:'mailTask',size:'80*44',label:'"+this.i18n['mailTask']+"'}",
-        receiveTaskData: "{clazz:'receiveTask',size:'80*44',label:'"+this.i18n['receiveTask']+"'}",
+        userTaskData: "{clazz:'userTask',size:'80*44',label:'" + this.i18n['userTask'] + "'}",
+        scriptTaskData: "{clazz:'scriptTask',size:'80*44',label:'" + this.i18n['scriptTask'] + "'}",
+        javaTaskData: "{clazz:'javaTask',size:'80*44',label:'" + this.i18n['javaTask'] + "'}",
+        mailTaskData: "{clazz:'mailTask',size:'80*44',label:'" + this.i18n['mailTask'] + "'}",
+        receiveTaskData: "{clazz:'receiveTask',size:'80*44',label:'" + this.i18n['receiveTask'] + "'}",
       };
     },
   }
@@ -92,13 +92,13 @@
         overflow-y: auto;
         border-left: 1px solid #E9E9E9;
         border-bottom: 1px solid #E9E9E9;
-        img{
+        img {
             width: 92px;
             height: 96px;
             padding: 4px;
             border: 1px solid rgba(0,0,0,0);
             border-radius: 2px;
-            &:hover{
+            &:hover {
                 border: 1px solid #ccc;
                 cursor: move;
             }
@@ -111,17 +111,17 @@
                     border: 1px solid #E9E9E9;
                     border-left:0;
                 }
-                &:first-child{
+                &:first-child {
                     > div[role=tab] > div {
                         border-top: 0;
                     }
                 }
-                &:last-child{
+                &:last-child {
                     > div[role=tab] > div {
                         border-bottom: 1px solid #E9E9E9;
                     }
                 }
-                .el-collapse-item__wrap{
+                .el-collapse-item__wrap {
                     border-top: 0;
                     background: #f0f2f5;
                     text-align: center;

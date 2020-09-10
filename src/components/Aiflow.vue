@@ -29,7 +29,7 @@
   import ItemPanel from '../components/ItemPanel'
   import DetailPanel from '../components/DetailPanel'
   import i18n from '../locales'
-  import {exportXML,exportImg} from "../util/bpmn"
+  import {exportXML, exportImg} from "../util/bpmn"
   import registerShape from '../shape'
   import registerBehavior from '../behavior'
   registerShape(G6);
@@ -149,7 +149,7 @@
         };
         window.addEventListener("resize", this.resizeFunc);
       },
-      onItemCfgChange(key,value){
+      onItemCfgChange(key, value) {
         const items = this.graph.get('selectedItems');
         if(items && items.length > 0){
           let item = this.graph.findById(items[0]);
@@ -161,7 +161,7 @@
               itemId: items[0],
               updateModel: {[key]: value}
             });
-          }else {
+          } else {
             this.graph.updateItem(item, {[key]: value});
           }
           this.selectedModel = {...item.getModel()};
@@ -171,7 +171,7 @@
           this.processModel = canvasModel;
         }
       },
-      getNodeInSubProcess(itemId){
+      getNodeInSubProcess(itemId) {
         const subProcess = this.graph.find('node', (node) => {
           if (node.get('model')) {
             const clazz = node.get('model').clazz;
