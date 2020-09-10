@@ -225,8 +225,8 @@
           shape: 'flow-polyline-round',
         },
       });
-      this.graph.saveXML = (createFile = true) => exportXML(this.graph.save(),this.processModel,createFile);
-      this.graph.saveImg = (createFile = true) => exportImg(this.$refs['canvas'],this.processModel.name,createFile);
+      this.graph.saveXML = (createFile = true) => exportXML(this.graph.save(), this.processModel, createFile);
+      this.graph.saveImg = (createFile = true) => exportImg(this.$refs['canvas'], this.processModel.name, createFile);
       if(this.isView)
         this.graph.setMode('view');
       else
