@@ -1,7 +1,9 @@
 import editorStyle from "../util/defaultStyle";
 import { getShapeName } from '../util/clazz';
 
-export default function(G6){
+let numList = {};
+
+export default function(G6) {
   G6.registerBehavior('dragPanelItemAddNode', {
     getDefaultCfg() {
       return {
@@ -16,7 +18,7 @@ export default function(G6){
       }
     },
     onMouseMove(e){
-      if(this.graph.get('addNodeDragging')){
+      if(this.graph.get('addNodeDragging')) {
         let delegateShape = this.graph.get('addDelegateShape');
         const addModel = this.graph.get('addModel');
         const width = parseInt(addModel.size.split('*')[0]);
@@ -43,7 +45,7 @@ export default function(G6){
         this.graph.emit('afternodedrag',delegateShape);
       }
     },
-    onMouseUp(e){
+    onMouseUp(e) {
       if (this.graph.get('addNodeDragging')) {
         const p = this.graph.getPointByClient(e.clientX, e.clientY);
         const subProcessNode = this.graph.find('node', (node) => {
@@ -104,7 +106,7 @@ export default function(G6){
         this.graph.emit('afternodedragend');
       }
     },
-    _clearDelegate(){
+    _clearDelegate() {
       const delegateShape = this.graph.get('addDelegateShape');
       if (delegateShape) {
         delegateShape.remove();
@@ -113,10 +115,17 @@ export default function(G6){
       }
       this.graph.emit('afternodedragend');
     },
-    _addNode(p){
+    _addNode(p) {
       if (this.graph.get('addNodeDragging')) {
         const addModel = this.graph.get('addModel');
+        console.log(addModel);
         const { clazz = 'userTask' } = addModel;
+        if(numList[clazz]) {
+          numList[clazz] = parseInt(numList[clazz]) + 1;
+        } else {
+          numList[clazz] = 1;
+        }
+        const label = addModel.label + numList[clazz];
         //type、shape属性同时存在即兼容之前版本的数据，又兼容g6的升级
         addModel.type = getShapeName(clazz);
         addModel.shape = getShapeName(clazz);
@@ -132,6 +141,7 @@ export default function(G6){
               x: x,
               y: y,
               id: id,
+              label: label,
             },
           });
         } else {
@@ -140,6 +150,7 @@ export default function(G6){
             x: x,
             y: y,
             id: id,
+            label: label,
           });
         }
         this._clearDelegate();

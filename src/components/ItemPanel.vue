@@ -1,19 +1,43 @@
 <template>
-    <div class="itemPanel" :style="{'height': height+'px'}">
+    <div class="itemPanel" :style="{'height': height + 'px'}">
         <el-collapse v-model="activeNames" >
-            <el-collapse-item :title="i18n['start']" name="1">
-                <img data-item="{clazz:'start',size:'30*30',label:''}"
-                     :src="require('../assets/flow/start.svg')" style="width:42px;height:42px" />
-                <div>{{i18n['startEvent']}}</div>
-                <img data-item="{clazz:'timerStart',size:'30*30',label:''}"
-                     :src="require('../assets/flow/timer-start.svg')" style="width:42px;height:42px" />
-                <div>{{i18n['timerEvent']}}</div>
-                <img data-item="{clazz:'messageStart',size:'30*30',label:''}"
-                     :src="require('../assets/flow/message-start.svg')" style="width:42px;height:42px" />
-                <div>{{i18n['messageEvent']}}</div>
-                <img data-item="{clazz:'signalStart',size:'30*30',label:''}"
-                     :src="require('../assets/flow/signal-start.svg')" style="width:42px;height:42px" />
-                <div>{{i18n['signalEvent']}}</div>
+            <el-collapse-item :title="i18n['input']" name="1">
+                <el-collapse-item class="sub-collapse" :title="i18n['datasource']" name="11">
+                    <img :data-item="scriptCosData" :data-value="i18n['cosData']"
+                         :src="require('../assets/flow/script-task.svg')" style="width:80px;height:44px" />
+                    <div>{{i18n['cosData']}}</div>
+                    <img :data-item="scriptLocalData" :data-value="i18n['localData']"
+                         :src="require('../assets/flow/script-task.svg')" style="width:80px;height:44px" />
+                    <div>{{i18n['localData']}}</div>
+                </el-collapse-item>
+                <el-collapse-item class="sub-collapse" :title="i18n['dataTransfer']" name="12">
+                    <img data-item="{clazz:'start',size:'30*30',label:''}"
+                         :src="require('../assets/flow/start.svg')" style="width:42px;height:42px" />
+                    <div>{{i18n['startEvent']}}</div>
+                    <img data-item="{clazz:'timerStart',size:'30*30',label:''}"
+                         :src="require('../assets/flow/timer-start.svg')" style="width:42px;height:42px" />
+                    <div>{{i18n['timerEvent']}}</div>
+                    <img data-item="{clazz:'messageStart',size:'30*30',label:''}"
+                         :src="require('../assets/flow/message-start.svg')" style="width:42px;height:42px" />
+                    <div>{{i18n['messageEvent']}}</div>
+                    <img data-item="{clazz:'signalStart',size:'30*30',label:''}"
+                         :src="require('../assets/flow/signal-start.svg')" style="width:42px;height:42px" />
+                    <div>{{i18n['signalEvent']}}</div>
+                </el-collapse-item>
+                <el-collapse-item class="sub-collapse" :title="i18n['publicData']" name="13">
+                    <img data-item="{clazz:'start',size:'30*30',label:''}"
+                         :src="require('../assets/flow/start.svg')" style="width:42px;height:42px" />
+                    <div>{{i18n['startEvent']}}</div>
+                    <img data-item="{clazz:'timerStart',size:'30*30',label:''}"
+                         :src="require('../assets/flow/timer-start.svg')" style="width:42px;height:42px" />
+                    <div>{{i18n['timerEvent']}}</div>
+                    <img data-item="{clazz:'messageStart',size:'30*30',label:''}"
+                         :src="require('../assets/flow/message-start.svg')" style="width:42px;height:42px" />
+                    <div>{{i18n['messageEvent']}}</div>
+                    <img data-item="{clazz:'signalStart',size:'30*30',label:''}"
+                         :src="require('../assets/flow/signal-start.svg')" style="width:42px;height:42px" />
+                    <div>{{i18n['signalEvent']}}</div>
+                </el-collapse-item>
             </el-collapse-item>
             <el-collapse-item :title="i18n['task']" name="2">
                 <img :data-item="userTaskData"
@@ -74,6 +98,8 @@
     data() {
       return {
         activeNames: [],
+        scriptCosData: "{clazz:'scriptCosTask',size:'80*44',label:'" + this.i18n['scriptCosTask'] + "'}",
+        scriptLocalData: "{clazz:'scriptCosTask',size:'80*44',label:'" + this.i18n['scriptLocalTask'] + "'}",
         userTaskData: "{clazz:'userTask',size:'80*44',label:'" + this.i18n['userTask'] + "'}",
         scriptTaskData: "{clazz:'scriptTask',size:'80*44',label:'" + this.i18n['scriptTask'] + "'}",
         javaTaskData: "{clazz:'javaTask',size:'80*44',label:'" + this.i18n['javaTask'] + "'}",
@@ -85,9 +111,13 @@
 </script>
 
 <style lang="scss" >
+    .sub-collapse {
+        margin: 10px;
+    }
     .itemPanel {
         float: left;
-        width: 10%;
+        width: 15%;
+        min-width: 100px;
         background: #f0f2f5;
         overflow-y: auto;
         border-left: 1px solid #E9E9E9;

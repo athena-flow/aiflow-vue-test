@@ -194,9 +194,9 @@ const nodeDefinition = {
   },
   afterUpdate(cfg, group) {
     const icon = group.get('group').icon;
-    if(cfg.hideIcon && icon && icon.get('visible')){
+    if(cfg.hideIcon && icon && icon.get('visible')) {
       icon.hide();
-    }else if(!cfg.hideIcon && icon && !icon.get('visible')){
+    } else if(!cfg.hideIcon && icon && !icon.get('visible')) {
       icon.show();
     }
   },

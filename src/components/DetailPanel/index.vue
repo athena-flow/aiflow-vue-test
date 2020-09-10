@@ -2,6 +2,7 @@
     <div class="detailPanel" :style="{'height':height+'px'}">
         <UserTaskDetail v-if="model.clazz === 'userTask'" :model="model" :onChange="onChange" :readOnly="readOnly" :users="users" :groups="groups" />
         <ScriptTaskDetail v-else-if="model.clazz === 'scriptTask'" :model="model" :onChange="onChange" :readOnly="readOnly" />
+        <ScriptCosTaskDetail v-else-if="model.clazz === 'scriptCosTask'" :model="model" :onChange="onChange" :readOnly="readOnly" />
         <JavaTaskDetail v-else-if="model.clazz === 'javaTask'" :model="model" :onChange="onChange" :readOnly="readOnly" />
         <ReceiveTaskDetail v-else-if="model.clazz === 'receiveTask'" :model="model" :onChange="onChange" :readOnly="readOnly" />
         <MailTaskDetail v-else-if="model.clazz === 'mailTask'" :model="model" :onChange="onChange" :readOnly="readOnly" />
@@ -19,6 +20,7 @@
   import UserTaskDetail from "./UserTaskDetail"
   import JavaTaskDetail from "./JavaTaskDetail"
   import ScriptTaskDetail from "./ScriptTaskDetail"
+  import ScriptCosTaskDetail from "./ScriptCosTaskDetail"
   import ReceiveTaskDetail from "./ReceiveTaskDetail"
   import MailTaskDetail from "./MailTaskDetail"
   import TimerEventDetail from "./TimerEventDetail"
@@ -34,6 +36,7 @@
     components:{
       UserTaskDetail,
       ScriptTaskDetail,
+      ScriptCosTaskDetail,
       JavaTaskDetail,
       ReceiveTaskDetail,
       MailTaskDetail,
@@ -92,7 +95,7 @@
         background: #f0f2f5;
         flex: 0 0 auto;
         float: left;
-        width: 20%;
+        width: 25%;
         border-right: 1px solid #E9E9E9;
         border-bottom: 1px solid #E9E9E9;
         .panelTitle {

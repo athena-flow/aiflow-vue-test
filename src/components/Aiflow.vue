@@ -3,7 +3,7 @@
     <ToolbarPanel ref="toolbar" v-if="!isView" />
     <div style="display: flex">
       <ItemPanel ref="addItemPanel" v-if="!isView" :height="height"/>
-      <div ref="canvas" class="canvasPanel" :style="{'height':height+'px','width':isView?'100%':'70%','border-bottom':isView?0:null}"></div>
+      <div ref="canvas" class="canvasPanel" :style="{'height': height + 'px', 'width': isView ? '100%' : '60%', 'border-bottom': isView ? 0 : null}"></div>
       <DetailPanel ref="detailPanel"
                    v-if="!isView"
                    :height="height"
@@ -98,7 +98,7 @@
       };
     },
     watch:{
-      data(oldData,newData){
+      data(oldData,newData) {
         if(oldData !== newData) {
           if (this.graph) {
             this.graph.changeData(this.initShape(newData));
@@ -115,8 +115,8 @@
       },
     },
     methods: {
-      initShape(data){
-        if(data && data.nodes){
+      initShape(data) {
+        if(data && data.nodes) {
           return {
             nodes: data.nodes.map(node => {
               return {
@@ -129,7 +129,7 @@
         }
         return data;
       },
-      initEvents(){
+      initEvents() {
         this.graph.on('afteritemselected',(items)=>{
           if(items && items.length > 0) {
             let item = this.graph.findById(items[0]);
@@ -194,7 +194,7 @@
         return null;
       },
     },
-    destroyed(){
+    destroyed() {
       window.removeEventListener("resize", this.resizeFunc);
       this.graph.getNodes().forEach(node => {
         node.getKeyShape().stopAnimate();
