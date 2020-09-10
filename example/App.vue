@@ -3,7 +3,15 @@
     <el-button size="small" style="float:right;margin-top:6px;margin-right:6px;" @click="()=>{this.$refs['aiflow'].graph.saveXML()}">导出XML</el-button>
     <el-button size="small" style="float:right;margin-top:6px;margin-right:6px;" @click="()=>{this.$refs['aiflow'].graph.saveImg()}">导出图片</el-button>
     <el-button size="small" style="float:right;margin-top:6px;margin-right:6px;" @click="()=>{this.modalVisible=true}">查看流程图</el-button>
-    <aiflow-vue ref="aiflow" :data="demoData" :height="600" :users="candidateUsers" :groups="candidateGroups" :categorys="categorys" :lang="lang" />
+    <aiflow-vue
+            ref="aiflow"
+            :data="demoData"
+            :height="600"
+            :users="candidateUsers"
+            :groups="candidateGroups"
+            :categorys="categorys"
+            :lang="lang"
+    />
     <el-dialog title="查看流程图" :visible.sync="modalVisible" width="60%">
         <aiflow-vue ref="aiflow" :data="demoData1" :height="300" isView />
     </el-dialog>
