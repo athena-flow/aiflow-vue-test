@@ -35,7 +35,8 @@ export default {
         nodes:[
           { id: 'startNode1', x: 349, y: 53, label: '', clazz: 'start', },
           { id: 'costTaskNode1', x: 200, y: 200, label: 'cos数据集', clazz: 'scriptCosTask', cosPath: 'test'  }
-        ]
+        ],
+        edges: [{ id: "flow1600253607392", clazz: "flow", source: "startNode1", target: "costTaskNode1", sourceAnchor: 2, targetAnchor: 0 }]
       },
       jsonData: '',
       TestData: {
