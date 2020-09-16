@@ -52,6 +52,8 @@ export default {
 
 BPMN（Business Process Modeling Notation）
 
+https://g6.antv.vision/zh/docs/api/Graph/#getnodes
+
 ### Run Example
 ```
 npm run serve
