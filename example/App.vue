@@ -33,7 +33,8 @@ export default {
       lang: "zh",
       demoData: {
         nodes:[
-          { id: 'startNode1', x: 349, y: 53, label: '', clazz: 'start', }
+          { id: 'startNode1', x: 349, y: 53, label: '', clazz: 'start', },
+          { id: 'costTaskNode1', x: 200, y: 200, label: 'cos数据集', clazz: 'scriptCosTask', cosPath: 'test'  }
         ]
       },
       jsonData: '',
