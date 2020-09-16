@@ -3,7 +3,7 @@
     <el-button size="small" style="float:right;margin-top:6px;margin-right:6px;" @click="()=>{this.$refs['aiflow'].graph.saveJson()}">导出JSON</el-button>
     <el-button size="small" style="float:right;margin-top:6px;margin-right:6px;" @click="()=>{this.$refs['aiflow'].graph.saveImg()}">导出图片</el-button>
     <el-button size="small" style="float:right;margin-top:6px;margin-right:6px;" @click="()=>{this.view()}">查看JSON</el-button>
-    <el-button size="small" style="float:right;margin-top:6px;margin-right:6px;" @click="()=>{this.view()}">上传JSON</el-button>
+    <el-button size="small" style="float:right;margin-top:6px;margin-right:6px;" @click="()=>{this.uploadJson()}">上传JSON</el-button>
     <aiflow-vue
             ref="aiflow"
             :data="demoData"
@@ -93,6 +93,9 @@ export default {
       console.log(this.jsonData);
       //"{"nodes":[{"shape":"start-node","id":"startNode1","x":349,"y":53,"label":"","clazz":"start","style":{},"size":[30,30]}],"edges":[],"combos":[],"groups":[]}"
       this.modalVisible = true;
+    },
+    uploadJson() {
+
     }
   }
 }
