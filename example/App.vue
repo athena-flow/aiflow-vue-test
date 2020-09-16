@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <el-button size="small" style="float:right;margin-top:6px;margin-right:6px;" @click="()=>{this.$refs['aiflow'].graph.saveXML()}">导出XML</el-button>
+    <el-button size="small" style="float:right;margin-top:6px;margin-right:6px;" @click="()=>{this.$refs['aiflow'].graph.saveJson()}">导出Json</el-button>
     <el-button size="small" style="float:right;margin-top:6px;margin-right:6px;" @click="()=>{this.$refs['aiflow'].graph.saveImg()}">导出图片</el-button>
-    <el-button size="small" style="float:right;margin-top:6px;margin-right:6px;" @click="()=>{this.view()}">查看流程图</el-button>
+    <el-button size="small" style="float:right;margin-top:6px;margin-right:6px;" @click="()=>{this.view()}">查看JSON</el-button>
     <aiflow-vue
             ref="aiflow"
             :data="demoData"
@@ -102,5 +102,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.preview-json {
+  text-align: left;
+  background: #2d2d2d;
+  color: #cccccc;
+  padding: 10px;
+  white-space: pre-wrap;
 }
 </style>

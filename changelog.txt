@@ -3,3 +3,5 @@
 
 2020-09-16
 1. add view flow method
+2. add preview json method
+3. add save json method
