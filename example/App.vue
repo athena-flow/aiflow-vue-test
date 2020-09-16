@@ -29,7 +29,11 @@ export default {
     return {
       modalVisible:false,
       lang: "zh",
-      demoData: {},
+      demoData: {
+        nodes:[
+          { id: 'startNode1', x: 349, y: 53, label: '', clazz: 'start', }
+        ]
+      },
       TestData: {
         nodes: [{ id: 'startNode1', x: 50, y: 200, label: '', clazz: 'start', },
           { id: 'startNode2', x: 50, y: 320, label: '', clazz: 'timerStart', },
