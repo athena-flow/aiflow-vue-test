@@ -84,6 +84,8 @@ export default {
   methods: {
     view() {
       this.demoData1 = this.$refs['aiflow'].graph.save();
+      console.log(this.demoData1);
+      //"{"nodes":[{"shape":"start-node","id":"startNode1","x":349,"y":53,"label":"","clazz":"start","style":{},"size":[30,30]}],"edges":[],"combos":[],"groups":[]}"
       this.modalVisible = true;
     }
   }
