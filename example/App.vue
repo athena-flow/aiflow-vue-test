@@ -12,8 +12,10 @@
             :categorys="categorys"
             :lang="lang"
     />
-    <el-dialog title="查看流程图" :visible.sync="modalVisible" width="60%">
-        <aiflow-vue ref="aiflow" :data="demoData1" :height="300" isView />
+    <el-dialog title="查看JSON" :visible.sync="modalVisible" width="60%">
+        <pre class="preview-json">
+          <code>{{ jsonData }}</code>
+        </pre>
     </el-dialog>
   </div>
 </template>
@@ -34,6 +36,7 @@ export default {
           { id: 'startNode1', x: 349, y: 53, label: '', clazz: 'start', }
         ]
       },
+      jsonData: '',
       TestData: {
         nodes: [{ id: 'startNode1', x: 50, y: 200, label: '', clazz: 'start', },
           { id: 'startNode2', x: 50, y: 320, label: '', clazz: 'timerStart', },
@@ -83,9 +86,8 @@ export default {
   },
   methods: {
     view() {
-      this.demoData1.nodes = this.$refs['aiflow'].graph.getNodes();
-      this.demoData1.edges = this.$refs['aiflow'].graph.getEdges();
-      console.log(this.demoData1);
+      this.jsonData = this.$refs['aiflow'].graph.save();
+      console.log(this.jsonData);
       //"{"nodes":[{"shape":"start-node","id":"startNode1","x":349,"y":53,"label":"","clazz":"start","style":{},"size":[30,30]}],"edges":[],"combos":[],"groups":[]}"
       this.modalVisible = true;
     }
