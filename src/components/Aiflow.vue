@@ -207,7 +207,12 @@
         const toolbar = new Toolbar({container:this.$refs['toolbar'].$el});
         const addItemPanel = new AddItemPanel({container:this.$refs['addItemPanel'].$el});
         const canvasPanel = new CanvasPanel({container:this.$refs['canvas']});
-        plugins = [ this.cmdPlugin,toolbar,addItemPanel,canvasPanel ];
+        plugins = [
+          this.cmdPlugin,
+          toolbar,
+          addItemPanel,
+          canvasPanel
+        ];
       }
       const width = this.$refs['canvas'].offsetWidth;
       this.graph = new G6.Graph({
@@ -241,7 +246,7 @@
   };
 </script>
 <style lang="scss" scoped>
-    .root{
+    .root {
         width: 100%;
         height: 100%;
         background-color: #fff;
