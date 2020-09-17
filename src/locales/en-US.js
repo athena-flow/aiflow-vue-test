@@ -49,6 +49,7 @@ export default {
   'publicData': 'public data',
   'cosData': 'cos dataset',
   'localData': 'local data',
+  'cnWordSegmentation': 'Chinese words segmentation',
   'end': 'End Events',
   'gateway': 'Gateway',
   'exclusiveGateway': 'Exclusive Gateway',

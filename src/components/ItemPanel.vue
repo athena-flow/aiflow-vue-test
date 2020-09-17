@@ -11,18 +11,9 @@
                     <div>{{i18n['localData']}}</div>
                 </el-collapse-item>
                 <el-collapse-item class="sub-collapse" :title="i18n['dataTransfer']" name="12">
-                    <img data-item="{clazz:'start',size:'30*30',label:''}"
-                         :src="require('../assets/flow/start.svg')" style="width:42px;height:42px" />
-                    <div>{{i18n['startEvent']}}</div>
-                    <img data-item="{clazz:'timerStart',size:'30*30',label:''}"
-                         :src="require('../assets/flow/timer-start.svg')" style="width:42px;height:42px" />
-                    <div>{{i18n['timerEvent']}}</div>
-                    <img data-item="{clazz:'messageStart',size:'30*30',label:''}"
-                         :src="require('../assets/flow/message-start.svg')" style="width:42px;height:42px" />
-                    <div>{{i18n['messageEvent']}}</div>
-                    <img data-item="{clazz:'signalStart',size:'30*30',label:''}"
-                         :src="require('../assets/flow/signal-start.svg')" style="width:42px;height:42px" />
-                    <div>{{i18n['signalEvent']}}</div>
+                    <img :data-item="dataTransform" :data-value="i18n['cnWordSegmentation']"
+                         :src="require('../assets/flow/script-task.svg')" style="width:80px;height:44px" />
+                    <div>{{i18n['cnWordSegmentation']}}</div>
                 </el-collapse-item>
                 <el-collapse-item class="sub-collapse" :title="i18n['publicData']" name="13">
                     <img data-item="{clazz:'start',size:'30*30',label:''}"
@@ -100,6 +91,7 @@
         activeNames: [],
         scriptCosData: "{clazz:'scriptCosTask',size:'80*44',label:'" + this.i18n['scriptCosTask'] + "'}",
         scriptLocalData: "{clazz:'scriptLocalTask',size:'80*44',label:'" + this.i18n['scriptLocalTask'] + "'}",
+        dataTransform: "{clazz:'dataTransform',size:'80*44',label:'" + this.i18n['cnWordSegmentation'] + "'}",
         userTaskData: "{clazz:'userTask',size:'80*44',label:'" + this.i18n['userTask'] + "'}",
         scriptTaskData: "{clazz:'scriptTask',size:'80*44',label:'" + this.i18n['scriptTask'] + "'}",
         javaTaskData: "{clazz:'javaTask',size:'80*44',label:'" + this.i18n['javaTask'] + "'}",

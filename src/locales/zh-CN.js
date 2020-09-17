@@ -49,6 +49,7 @@ export default {
   'publicData': '公共数据集',
   'cosData': 'cos数据集',
   'localData': '本地数据',
+  'cnWordSegmentation': '中文分词',
   'end': '结束事件',
   'gateway': '网关',
   'exclusiveGateway': '排他网关',
