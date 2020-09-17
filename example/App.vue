@@ -3,7 +3,7 @@
     <el-button size="small" style="float:right;margin-top:6px;margin-right:6px;" @click="()=>{this.$refs['aiflow'].graph.saveJson()}">导出JSON</el-button>
     <el-button size="small" style="float:right;margin-top:6px;margin-right:6px;" @click="()=>{this.$refs['aiflow'].graph.saveImg()}">导出图片</el-button>
     <el-button size="small" style="float:right;margin-top:6px;margin-right:6px;" @click="()=>{this.view()}">查看JSON</el-button>
-    <el-button size="small" style="float:right;margin-top:6px;margin-right:6px;" @click="()=>{this.uploadJson()}">上传JSON</el-button>
+    <el-button size="small" style="float:right;margin-top:6px;margin-right:6px;" @click="()=>{this.uploadFile()}">上传JSON</el-button>
     <aiflow-vue
             ref="aiflow"
             :data="demoData"
@@ -18,6 +18,16 @@
           <code>{{ jsonData }}</code>
         </pre>
     </el-dialog>
+    <el-dialog
+            title="提示"
+            :visible.sync="dialogVisible"
+            width="30%">
+        <span>确定上传吗？</span>
+        <span slot="footer" class="dialog-footer">
+          <el-button @click="dialogVisible = false">取 消</el-button>
+          <el-button type="primary" @click="()=>{this.uploadJson()}">确 定</el-button>
+        </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -31,6 +41,7 @@ export default {
   data () {
     return {
       modalVisible:false,
+      dialogVisible: false,
       lang: "zh",
       demoData: {
         nodes:[
@@ -94,8 +105,44 @@ export default {
       //"{"nodes":[{"shape":"start-node","id":"startNode1","x":349,"y":53,"label":"","clazz":"start","style":{},"size":[30,30]}],"edges":[],"combos":[],"groups":[]}"
       this.modalVisible = true;
     },
+    uploadFile() {
+      this.dialogVisible = true;
+    },
     uploadJson() {
-
+      // 打开文件选择窗口
+      const input = document.createElement('input');
+      input.type = 'file';
+      // 限定文件类型
+      input.accept = '.json';
+      input.click();
+      const that = this;
+      input.onchange = function () {
+        const file = input.files[0]
+        // FileReader实例
+        const reader = new FileReader()
+        // 读取文件
+        reader.readAsText(file, 'UTF-8')
+        // 处理数据
+        reader.onload = function (event) {
+          try {
+            const fileString = event.target.result
+            const fileJson = JSON.parse(fileString)
+            // 清空画布
+            that.$refs['aiflow'].graph.clear()
+            // 设置数据
+            that.$refs['aiflow'].graph.data(that.$refs['aiflow'].initShape(fileJson))
+            // 渲染
+            that.$refs['aiflow'].graph.render()
+          } catch (e) {
+            // 提示
+            that.$notify({
+              title: '提示',
+              message: '上传报错'
+            });
+            console.error('AIFLOW EDITOR ERROR:: upload JSON failed!', e)
+          }
+        }
+      }
     }
   }
 }
