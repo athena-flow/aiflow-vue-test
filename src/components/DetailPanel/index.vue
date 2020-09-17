@@ -42,6 +42,7 @@
       ScriptTaskDetail,
       ScriptCosTaskDetail,
       ScriptLocalTaskDetail,
+      DataTransformDetail,
       JavaTaskDetail,
       ReceiveTaskDetail,
       MailTaskDetail,

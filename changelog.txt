@@ -9,3 +9,4 @@
 2020-09-17
 1. add upload json method
 2. add local data method
+3. add data transform detail
