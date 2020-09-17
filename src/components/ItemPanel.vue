@@ -30,7 +30,7 @@
                     <div>{{i18n['signalEvent']}}</div>
                 </el-collapse-item>
             </el-collapse-item>
-            <el-collapse-item :title="i18n['framework']" name="1">
+            <el-collapse-item :title="i18n['framework']" name="2">
                 <el-collapse-item class="sub-collapse" :title="i18n['datasource']" name="11">
                     <img :data-item="scriptCosData" :data-value="i18n['cosData']"
                          :src="require('../assets/flow/script-task.svg')" style="width:80px;height:44px" />
@@ -40,7 +40,7 @@
                     <div>{{i18n['localData']}}</div>
                 </el-collapse-item>
             </el-collapse-item>
-            <el-collapse-item :title="i18n['arithmetic']" name="1">
+            <el-collapse-item :title="i18n['arithmetic']" name="3">
                 <el-collapse-item class="sub-collapse" :title="i18n['datasource']" name="11">
                     <img :data-item="scriptCosData" :data-value="i18n['cosData']"
                          :src="require('../assets/flow/script-task.svg')" style="width:80px;height:44px" />
@@ -50,7 +50,7 @@
                     <div>{{i18n['localData']}}</div>
                 </el-collapse-item>
             </el-collapse-item>
-            <el-collapse-item :title="i18n['model']" name="1">
+            <el-collapse-item :title="i18n['model']" name="4">
                 <el-collapse-item class="sub-collapse" :title="i18n['datasource']" name="11">
                     <img :data-item="scriptCosData" :data-value="i18n['cosData']"
                          :src="require('../assets/flow/script-task.svg')" style="width:80px;height:44px" />
@@ -60,7 +60,7 @@
                     <div>{{i18n['localData']}}</div>
                 </el-collapse-item>
             </el-collapse-item>
-            <el-collapse-item :title="i18n['output']" name="1">
+            <el-collapse-item :title="i18n['output']" name="5">
                 <el-collapse-item class="sub-collapse" :title="i18n['datasource']" name="11">
                     <img :data-item="scriptCosData" :data-value="i18n['cosData']"
                          :src="require('../assets/flow/script-task.svg')" style="width:80px;height:44px" />
@@ -70,7 +70,7 @@
                     <div>{{i18n['localData']}}</div>
                 </el-collapse-item>
             </el-collapse-item>
-            <el-collapse-item :title="i18n['automl']" name="1">
+            <el-collapse-item :title="i18n['automl']" name="6">
                 <el-collapse-item class="sub-collapse" :title="i18n['datasource']" name="11">
                     <img :data-item="scriptCosData" :data-value="i18n['cosData']"
                          :src="require('../assets/flow/script-task.svg')" style="width:80px;height:44px" />
@@ -80,7 +80,7 @@
                     <div>{{i18n['localData']}}</div>
                 </el-collapse-item>
             </el-collapse-item>
-            <el-collapse-item :title="i18n['task']" name="2">
+            <el-collapse-item :title="i18n['task']" name="7">
                 <img :data-item="userTaskData"
                      :src="require('../assets/flow/user-task.svg')" style="width:80px;height:44px" />
                 <div>{{i18n['userTask']}}</div>
@@ -97,7 +97,7 @@
                      :src="require('../assets/flow/receive-task.svg')" style="width:80px;height:44px" />
                 <div>{{i18n['receiveTask']}}</div>
             </el-collapse-item>
-            <el-collapse-item :title="i18n['gateway']" name="3">
+            <el-collapse-item :title="i18n['gateway']" name="8">
                 <img data-item="{clazz:'exclusiveGateway',size:'40*40',label:''}"
                      :src="require('../assets/flow/exclusive-gateway.svg')" style="width:48px;height:48px" />
                 <div>{{i18n['exclusiveGateway']}}</div>
@@ -108,7 +108,7 @@
                      :src="require('../assets/flow/inclusive-gateway.svg')" style="width:48px;height:48px" />
                 <div>{{i18n['inclusiveGateway']}}</div>
             </el-collapse-item>
-            <el-collapse-item :title="i18n['catch']" name="4">
+            <el-collapse-item :title="i18n['catch']" name="9">
                 <img data-item="{clazz:'timerCatch',size:'50*30',label:''}"
                      :src="require('../assets/flow/timer-catch.svg')" style="width:58px;height:38px" />
                 <div>{{i18n['timerEvent']}}</div>
