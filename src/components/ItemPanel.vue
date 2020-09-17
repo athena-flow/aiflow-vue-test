@@ -30,6 +30,56 @@
                     <div>{{i18n['signalEvent']}}</div>
                 </el-collapse-item>
             </el-collapse-item>
+            <el-collapse-item :title="i18n['framework']" name="1">
+                <el-collapse-item class="sub-collapse" :title="i18n['datasource']" name="11">
+                    <img :data-item="scriptCosData" :data-value="i18n['cosData']"
+                         :src="require('../assets/flow/script-task.svg')" style="width:80px;height:44px" />
+                    <div>{{i18n['cosData']}}</div>
+                    <img :data-item="scriptLocalData" :data-value="i18n['localData']"
+                         :src="require('../assets/flow/script-task.svg')" style="width:80px;height:44px" />
+                    <div>{{i18n['localData']}}</div>
+                </el-collapse-item>
+            </el-collapse-item>
+            <el-collapse-item :title="i18n['arithmetic']" name="1">
+                <el-collapse-item class="sub-collapse" :title="i18n['datasource']" name="11">
+                    <img :data-item="scriptCosData" :data-value="i18n['cosData']"
+                         :src="require('../assets/flow/script-task.svg')" style="width:80px;height:44px" />
+                    <div>{{i18n['cosData']}}</div>
+                    <img :data-item="scriptLocalData" :data-value="i18n['localData']"
+                         :src="require('../assets/flow/script-task.svg')" style="width:80px;height:44px" />
+                    <div>{{i18n['localData']}}</div>
+                </el-collapse-item>
+            </el-collapse-item>
+            <el-collapse-item :title="i18n['model']" name="1">
+                <el-collapse-item class="sub-collapse" :title="i18n['datasource']" name="11">
+                    <img :data-item="scriptCosData" :data-value="i18n['cosData']"
+                         :src="require('../assets/flow/script-task.svg')" style="width:80px;height:44px" />
+                    <div>{{i18n['cosData']}}</div>
+                    <img :data-item="scriptLocalData" :data-value="i18n['localData']"
+                         :src="require('../assets/flow/script-task.svg')" style="width:80px;height:44px" />
+                    <div>{{i18n['localData']}}</div>
+                </el-collapse-item>
+            </el-collapse-item>
+            <el-collapse-item :title="i18n['output']" name="1">
+                <el-collapse-item class="sub-collapse" :title="i18n['datasource']" name="11">
+                    <img :data-item="scriptCosData" :data-value="i18n['cosData']"
+                         :src="require('../assets/flow/script-task.svg')" style="width:80px;height:44px" />
+                    <div>{{i18n['cosData']}}</div>
+                    <img :data-item="scriptLocalData" :data-value="i18n['localData']"
+                         :src="require('../assets/flow/script-task.svg')" style="width:80px;height:44px" />
+                    <div>{{i18n['localData']}}</div>
+                </el-collapse-item>
+            </el-collapse-item>
+            <el-collapse-item :title="i18n['model']" name="1">
+                <el-collapse-item class="sub-collapse" :title="i18n['datasource']" name="11">
+                    <img :data-item="scriptCosData" :data-value="i18n['cosData']"
+                         :src="require('../assets/flow/script-task.svg')" style="width:80px;height:44px" />
+                    <div>{{i18n['cosData']}}</div>
+                    <img :data-item="scriptLocalData" :data-value="i18n['localData']"
+                         :src="require('../assets/flow/script-task.svg')" style="width:80px;height:44px" />
+                    <div>{{i18n['localData']}}</div>
+                </el-collapse-item>
+            </el-collapse-item>
             <el-collapse-item :title="i18n['task']" name="2">
                 <img :data-item="userTaskData"
                      :src="require('../assets/flow/user-task.svg')" style="width:80px;height:44px" />
