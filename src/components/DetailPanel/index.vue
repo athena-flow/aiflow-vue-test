@@ -3,6 +3,7 @@
         <UserTaskDetail v-if="model.clazz === 'userTask'" :model="model" :onChange="onChange" :readOnly="readOnly" :users="users" :groups="groups" />
         <ScriptTaskDetail v-else-if="model.clazz === 'scriptTask'" :model="model" :onChange="onChange" :readOnly="readOnly" />
         <ScriptCosTaskDetail v-else-if="model.clazz === 'scriptCosTask'" :model="model" :onChange="onChange" :readOnly="readOnly" />
+        <ScriptLocalTaskDetail v-else-if="model.clazz === 'scriptLocalTask'" :model="model" :onChange="onChange" :readOnly="readOnly" />
         <JavaTaskDetail v-else-if="model.clazz === 'javaTask'" :model="model" :onChange="onChange" :readOnly="readOnly" />
         <ReceiveTaskDetail v-else-if="model.clazz === 'receiveTask'" :model="model" :onChange="onChange" :readOnly="readOnly" />
         <MailTaskDetail v-else-if="model.clazz === 'mailTask'" :model="model" :onChange="onChange" :readOnly="readOnly" />
@@ -21,6 +22,7 @@
   import JavaTaskDetail from "./JavaTaskDetail"
   import ScriptTaskDetail from "./ScriptTaskDetail"
   import ScriptCosTaskDetail from "./ScriptCosTaskDetail"
+  import ScriptLocalTaskDetail from "./ScriptCosTaskDetail"
   import ReceiveTaskDetail from "./ReceiveTaskDetail"
   import MailTaskDetail from "./MailTaskDetail"
   import TimerEventDetail from "./TimerEventDetail"
@@ -37,6 +39,7 @@
       UserTaskDetail,
       ScriptTaskDetail,
       ScriptCosTaskDetail,
+      ScriptLocalTaskDetail,
       JavaTaskDetail,
       ReceiveTaskDetail,
       MailTaskDetail,
