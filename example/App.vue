@@ -116,6 +116,7 @@ export default {
       input.accept = '.json';
       input.click();
       const that = this;
+      that.dialogVisible = false;
       input.onchange = function () {
         const file = input.files[0]
         // FileReader实例
