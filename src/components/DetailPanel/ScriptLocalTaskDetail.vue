@@ -4,13 +4,22 @@
         <div class="panelBody">
             <DefaultDetail :model="model" :onChange="onChange" :readOnly="readOnly" />
             <div class="panelRow">
-                <div>COS数据路径：</div>
+                <div>数据文件：</div>
                 <el-input style="width:90%; font-size:12px"
                           type="textarea"
                           :rows="4"
                           :disabled="readOnly"
-                          :value="model.cosPath"
-                          @input="(value) => {onChange('cosPath', value)}" />
+                          :value="model.localPath"
+                          @input="(value) => {onChange('localPath', value)}" />
+            </div>
+            <div class="panelRow">
+                <div>目标COS路径：</div>
+                <el-input style="width:90%; font-size:12px"
+                          type="textarea"
+                          :rows="4"
+                          :disabled="readOnly"
+                          :value="model.cosTargetPath"
+                          @input="(value) => {onChange('cosTargetPath', value)}" />
             </div>
         </div>
     </div>
