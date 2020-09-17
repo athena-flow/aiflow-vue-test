@@ -70,7 +70,7 @@
                     <div>{{i18n['localData']}}</div>
                 </el-collapse-item>
             </el-collapse-item>
-            <el-collapse-item :title="i18n['model']" name="1">
+            <el-collapse-item :title="i18n['automl']" name="1">
                 <el-collapse-item class="sub-collapse" :title="i18n['datasource']" name="11">
                     <img :data-item="scriptCosData" :data-value="i18n['cosData']"
                          :src="require('../assets/flow/script-task.svg')" style="width:80px;height:44px" />
