@@ -22,7 +22,7 @@
   import JavaTaskDetail from "./JavaTaskDetail"
   import ScriptTaskDetail from "./ScriptTaskDetail"
   import ScriptCosTaskDetail from "./ScriptCosTaskDetail"
-  import ScriptLocalTaskDetail from "./ScriptCosTaskDetail"
+  import ScriptLocalTaskDetail from "./ScriptLocalTaskDetail"
   import ReceiveTaskDetail from "./ReceiveTaskDetail"
   import MailTaskDetail from "./MailTaskDetail"
   import TimerEventDetail from "./TimerEventDetail"
